@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Conversion Result</h1>
+    <p>Audio File: <a href="{{ url_for('download', filename=audio_file) }}">{{ audio_file }}</a></p>
+    <p>RSS Feed: <pre>{{ rss_feed }}</pre></p>
+{% endblock %}
