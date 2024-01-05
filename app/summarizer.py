@@ -12,3 +12,5 @@ class Summarizer:
             max_tokens=150
         
         )
+        summary = response.choices[0].text.strip()
+        return summary
