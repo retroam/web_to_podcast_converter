@@ -2,9 +2,7 @@ import openai
 
 class Summarizer:
     @staticmethod
-    def summarize(test
-                  
-                  ):
+    def summarize(text):
         openai.api_ky = ''
         response = openai.Completion.create(
             engine="text-davinci-003",
