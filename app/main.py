@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Form
+from fastapi import FastAPI, Form, Request
 from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from app.web_to_podcast_converter import WebToPodcastConverter
@@ -8,9 +8,10 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="app/templates")
 
+
 @app.get("/")
-def read_form():
-    return templates.TemplateResponse("index.html", {"request": "form"})
+def read_form(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/convert/")
 def convert(url: str = Form(...)):
