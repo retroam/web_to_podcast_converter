@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Web to Podcast Converter</h1>
+    <form method="post" action="{{ url_for('convert') }}">
+        <label for="url">Enter Article URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Convert</button>
+    </form>
+{% endblock %}
